@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="{% url 'query.new' %}" method="post">
+        {% csrf_token %}
+
+    <div class="control-group">
+        <label class="control-label" for="formTitle">Pavadinimas</label>
+        <div class="controls">
+            <input type="text" id="formTitle" name="formTitle" placeholder="Įveskite pavadinimą...">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="email">Elektroninis paštas</label>
+        <div class="controls">
+            <input type="email" id="email" name="email" placeholder="Įveskite elektroninį paštą...">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="text">Tekstas</label>
+        <div class="controls">
+            <textarea rows="4" id="text" name="text" placeholder="Įveskite tekstą..."></textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit">Siųsti</button>
+        </div>
+    </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+{% endblock %}
