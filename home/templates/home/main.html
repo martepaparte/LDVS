@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-
 {% block content %}
-    <h1>Pagrindinis puslapis</h1>
-    <a href="{% url 'login' %}">Prisijungti</a>
-    <a href="{% url 'query.new' %}">Susisiekti</a>
+
+{% if user.is_authenticated %}
+    {% include 'home/user_logged_in.html'%}
+
+{% else %}
+    {% include 'home/user_logged_out.html'%}
+
+{% endif %}
 
 {% endblock %}

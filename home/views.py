@@ -12,7 +12,7 @@ class LoginInterfaceView(LoginView):
 
 
 class WelcomeView(TemplateView):
-    template_name = 'home/welcome.html'
+    template_name = 'home/user_logged_in.html'
 
 
 class LogoutInterfaceView(LogoutView):

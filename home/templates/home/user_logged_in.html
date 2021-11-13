@@ -1,0 +1,21 @@
+    <h1>Welcome, {{ user.name }}!</h1>
+
+    <!-- ADMIN PANEL-->
+    {% if user.role == user.ADMIN %}
+        <p>Admin goes brrr</p>
+        <a href="{% url 'add.new.job' %}">Pridėti darbo skelbimą</a>
+
+    {% endif %}
+    <!-- CLIENT PANEL-->
+    {% if user.role == user.CLIENT %}
+        <p>Client goes brrr</p>
+    {% endif %}
+    <!-- TEMP WORKER PANEL-->
+    {% if user.role == user.TEMP_WORKER %}
+        <p>Temp goes brrr</p>
+    {% endif %}
+    <!-- ACCOUNTANT PANEL-->
+    {% if user.role == user.ACCOUNTANT %}
+        <p>Accountant goes brrr</p>
+    {% endif %}
+    <button type="button"><a href="{% url 'userlogout' %}">Logout</a></button>

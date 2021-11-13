@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--    <form action="{% url 'add.new.job' %}" method="post"> -->
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <label for="title">Skelbimo antraštė</label>
+        <input type="text" id="title" name="title" placeholder="Įveskite skelbimo antraštę..." required
+                {% if form.errors %}
+               value="{{ form.title.value }}"
+                {% endif %}
+        >
+        <br>
+
+        <label for="description">Apibūdinimas</label>
+        <textarea rows="6" id="description" name="description" placeholder="Įveskite apibūdinimą..."
+                  required >{% if form.errors %}{{ form.description.value }}{% endif %}</textarea>
+
+        <br>
+
+        <label for="hamount">Valandinis atlygis</label>
+        <input type="text" id="hamount" name="hamount" placeholder="Įveskite valandinį atlygį..." required
+                {% if form.errors %}
+               value="{{ form.hamount.value }}"
+                {% endif %}
+
+        >
+        {% if form.errors.hamount %}
+            {{ form.errors.hamount }}
+        {% endif %}
+
+        <br>
+
+        <label for="companyname">Įmonės pavadinimas</label>
+        <input type="text" id="companyname" name="companyname" placeholder="Įveskite įmonės pavadinimą..." required
+                {% if form.errors %}
+
+               value="{{ form.companyname.value }}"
+                        {% endif %}
+        >
+
+        <br>
+
+        <button type="submit">Išsaugoti</button>
+
+    </form>
+{% endblock %}

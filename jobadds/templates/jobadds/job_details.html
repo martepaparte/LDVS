@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Pavadinimas</h1>
+    {{job.title}}
+    <br>
+    <h1>Apibūdinimas</h1>
+    {{job.description}}
+    <br>
+    <h1>Valandinis atlygis</h1>
+    {{ job.hamount }}
+    <br>
+    <h1>Įmonės pavadinimas</h1>
+    {{ job.companyname }}
+
+{% endblock %}
