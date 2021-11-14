@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from .models import RequestQuery
 
 
-class QueryForm(forms.ModelForm):
+class RequestQueryForm(forms.ModelForm):
     class Meta:
         model = RequestQuery
         fields = ('formTitle', 'email', 'text')

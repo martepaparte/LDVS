@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <p>test</p>
+    {% for request_query in request_queries %}
+        <a href="{% url 'request.query.details' pk=request_query.id %}">
+
+            <p>{{ request_query.formTitle }}</p>
+
+        </a>
+
+    {% endfor %}
+
+{% endblock %}

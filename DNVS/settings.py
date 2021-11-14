@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     # apps
     'home',
     'queryForm',
-    'jobadds'
+    'jobadds',
+    'orderManager',
+    'customUserManager'
 ]
 
 MIDDLEWARE = [

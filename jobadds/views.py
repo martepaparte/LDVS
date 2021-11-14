@@ -17,7 +17,7 @@ class JobAddCreateView(CreateView):
 
     def form_valid(self, form):
         form.save()
-        messages.add_message(self.request, messages.INFO, 'Hello world.')
+        messages.add_message(self.request, messages.INFO, 'Forma sukurta sėkmingai.')
         form.clean()
         return HttpResponseRedirect(self.request.path_info)
 
