@@ -1,48 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!--    <form action="{% url 'add.new.job' %}" method="post"> -->
-    <form action="" method="post">
-        {% csrf_token %}
+    <div class="d-flex  justify-content-center align-items-center h-100">
+        <div>
+            <form action="{% url 'add.new.job' %}" method="post">
+                {% csrf_token %}
+                <div class="text-center"><h1>Naujo darbo skelbimo kūrimas</h1></div>
 
-        <label for="title">Skelbimo antraštė</label>
-        <input type="text" id="title" name="title" placeholder="Įveskite skelbimo antraštę..." required
-                {% if form.errors %}
-               value="{{ form.title.value }}"
-                {% endif %}
-        >
-        <br>
-
-        <label for="description">Apibūdinimas</label>
-        <textarea rows="6" id="description" name="description" placeholder="Įveskite apibūdinimą..."
-                  required >{% if form.errors %}{{ form.description.value }}{% endif %}</textarea>
-
-        <br>
-
-        <label for="hamount">Valandinis atlygis</label>
-        <input type="text" id="hamount" name="hamount" placeholder="Įveskite valandinį atlygį..." required
-                {% if form.errors %}
-               value="{{ form.hamount.value }}"
-                {% endif %}
-
-        >
-        {% if form.errors.hamount %}
-            {{ form.errors.hamount }}
-        {% endif %}
-
-        <br>
-
-        <label for="companyname">Įmonės pavadinimas</label>
-        <input type="text" id="companyname" name="companyname" placeholder="Įveskite įmonės pavadinimą..." required
-                {% if form.errors %}
-
-               value="{{ form.companyname.value }}"
+                <label for="title" class="form-label text-center">Skelbimo antraštė</label>
+                <input type="text" id="title" name="title" class="form-control"
+                       placeholder="Įveskite skelbimo antraštę..." required
+                        {% if form.errors %}
+                       value="{{ form.title.value }}"
                         {% endif %}
-        >
+                >
 
-        <br>
+                <label for="description" class="form-label">Apibūdinimas</label>
+                <textarea rows="20" id="description" name="description" class="form-control"
+                          placeholder="Įveskite apibūdinimą..."
+                          required>{% if form.errors %}{{ form.description.value }}{% endif %}</textarea>
 
-        <button type="submit">Išsaugoti</button>
 
-    </form>
+                <label for="hamount" class="form-label">Valandinis atlygis</label>
+                <input type="text" id="hamount" name="hamount" class="form-control"
+                       placeholder="Įveskite valandinį atlygį..." required
+                        {% if form.errors %}
+                       value="{{ form.hamount.value }}"
+                        {% endif %}
+
+                >
+                {% if form.errors.hamount %}
+                    <p>Prašome įvesti skaičių (galimos reikšmės nuo 1 iki 1000)</p>
+                {% endif %}
+                <label for="companyname" class="form-label">Įmonės pavadinimas</label>
+                <input type="text" id="companyname" name="companyname" class="form-control"
+                       placeholder="Įveskite įmonės pavadinimą..."
+                       required
+                        {% if form.errors %}
+                       value="{{ form.companyname.value }}"
+                        {% endif %}
+                >
+                <div class="form-group col-12 my-3">
+
+                <button type="submit">Išsaugoti</button>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}

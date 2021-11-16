@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Manage clients</h1>
+    <h1>Valdyti klientus</h1>
+    {% for client in clients %}
 
+        <a href="{% url 'client.detail' pk=client.id %}">
+
+            <p>{{ client.name }}</p>
+
+        </a>
+
+    {% endfor %}
 
 {% endblock %}

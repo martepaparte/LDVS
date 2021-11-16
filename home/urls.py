@@ -8,6 +8,7 @@ urlpatterns = [
     path('userlogout', views.LogoutInterfaceView.as_view(), name='userlogout'),
     path('', include('queryForm.urls')),
     path('', include('jobadds.urls')),
-    path('', include('orderManager.urls'))
+    path('', include('orderManager.urls')),
+    path('', include('customUserManager.urls'))
     # url(r'^logout/$', LogoutView.as_view(), name='logout')
 ]
