@@ -1,2 +1,2 @@
 # DNVS
-# Homework for university
+# Homework
