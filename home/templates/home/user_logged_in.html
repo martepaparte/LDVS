@@ -5,19 +5,17 @@
     {% if user.role == user.ADMIN %}
         {% include 'home/admin_panel.html'%}
     {% endif %}
-
-
     <!-- CLIENT PANEL-->
     {% if user.role == user.CLIENT %}
-        <p>Client goes brrr</p>
+        {% include 'home/client_panel.html'%}
     {% endif %}
     <!-- TEMP WORKER PANEL-->
     {% if user.role == user.TEMP_WORKER %}
-        <p>Temp goes brrr</p>
+        {% include 'home/temp_worker_.html'%}
     {% endif %}
     <!-- ACCOUNTANT PANEL-->
     {% if user.role == user.ACCOUNTANT %}
-        <p>Accountant goes brrr</p>
+        {% include 'home/accountaint_panel.html'%}
     {% endif %}
     {% endblock %}
 
