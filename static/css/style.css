@@ -29,3 +29,10 @@ div.content {
   vertical-align: middle;
 }
 
+.main_body {
+    background-color: rgb(45, 92, 148, 0.4);
+}
+
+.body-img {
+  background-image: url("workers.jpg");
+}
