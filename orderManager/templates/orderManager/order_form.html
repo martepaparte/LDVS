@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="d-md-flex">
+
+
+        <form action="{% url 'order.new' %}" method="post">
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label for="orderPlace">Vieta</label>
+
+                <input type="text" id="orderPlace" class="form-control" name="place"
+                       placeholder="Įveskite vietą..." required>
+
+                <label for="order_date">Data</label>
+
+                <input type="date" id="order_date" class="form-control" name="order_date"
+                       required>
+
+                <label for="emp_count">Darbuotojų skaičius</label>
+                <input type="number" id="emp_count" class="form-control" name="emp_count" min="1"
+                       required>
+
+                <label for="emp_qualification">Darbuotojų kvalifikacija</label>
+
+                <input type="text" id="emp_qualification" class="form-control" name="emp_qualification"
+                       placeholder="Įveskite darbuotojų kvalifikaciją..." required>
+
+                <label for="order_task">Užsakymo aprašymas</label>
+                <textarea rows="10" id="order_task" class="form-control" name="order_task"
+                          placeholder="Įveskite užsakymo aprašymą..."
+                          required></textarea>
+
+                <label for="task_duration_hours">Užduoties trukmė (valandomis)</label>
+                <input type="number" id="task_duration_hours" class="form-control" name="task_duration_hours" min="1"
+                       required>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Siųsti</button>
+        </form>
+    </div>
+{% endblock %}
